@@ -59,7 +59,10 @@ const scores = [
 
 // ----------------------------------------------------------
 //    REAL LIFE EXAMPLE
-// Reduce can sometimes save us a lot of time -- if we remember to use it. Instead of writing a complicated map or filter method and then calling the name of the ship out of the retuned array, Return the name of the fastest star ship
+// Reduce can sometimes save us a lot of time -- if we remember to use it.
+// Instead of writing a complicated map or filter method and then calling the
+// name of the ship out of the retuned array, Return the name of the fastest
+// star ship
 
 const ships = [
     {
@@ -81,3 +84,16 @@ const ships = [
 ]
 
 // Expected output: Tie Fighters
+
+// solution:
+const result = ships.reduce((previous, current) => {
+    const speed = parseInt(current.speed.slice(0, -1))
+    const previousSpeed = parseInt(previous.speed.slice(0, -1))
+    if (speed > previousSpeed) {
+        return current
+    }
+
+    return previous
+}, { name: "none", speed: "0G"})
+
+console.log(result.name)
