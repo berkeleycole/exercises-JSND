@@ -34,3 +34,4 @@ library = ['Dune', 'Nineteen Eighty-Four']
 
 library.concat('The Hitchiker`s Guide to the Galaxy')
 // this works! We can update items in the array or add to it
+// Note that concat is the best non-mutative way to add items to an array

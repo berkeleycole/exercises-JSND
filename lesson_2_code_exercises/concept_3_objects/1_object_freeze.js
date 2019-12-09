@@ -1,13 +1,20 @@
-// OBJECT FREEZE PRACTICE
+// ----------------------------------------------------------
 
-const obj = {
-  prop: 42
-};
+// OBJECT FREEZE EXAMPLES
 
-Object.freeze(obj);
+// ----------------------------------------------------------
 
-obj.prop = 33;
-// Throws an error in strict mode
+const current_show = {
+    title: 'Dr. Who',
+    seasons: 11,
+    current_season: 4
+}
 
-console.log(obj.prop);
-// expected output: 42
+// as a const, we can do this:
+current_show.current_season = 5
+
+// but if we freeze the object
+Object.freeze(current_show);
+
+obj.current_season = 5;
+// Throws an error and current_season remains unchanged
