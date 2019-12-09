@@ -15,7 +15,7 @@ const titles = captains.map(cap => {
 })
 
 console.log(titles)
-// expected output: Array ['Captain Picard', 'Captain Adama', 'Captain Reynolds', 'Captain Beeblebrox'];
+// expected output: Array ['Captain Picard', 'Captain Adama', 'Captain Reynolds', 'Captain Beeblebrox']
 console.log(captains)
 // is unchanged
 
@@ -35,7 +35,7 @@ const doubler = function(x) {
 }
 
 const doubles2 = nums.map(x => { return doubler(x) })
-console.log(doubles2);
+console.log(doubles2)
 
 // ----------------------------------------------------------
 
@@ -47,11 +47,11 @@ const start = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // your code
 
-// expected output: Array [10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+// expected output: Array [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 // solution
 const end = start.map(x => abs(x - 11))
-console.log(end);
+console.log(end)
 
 
 // ----------------------------------------------------------
@@ -96,7 +96,7 @@ const sci_fi_shows = [1, 2, 3, 4]
 // ADVANCED EXERCISES
 
 // ----------------------------------------------------------
-["1", "2", "3"].map(parseInt);
+["1", "2", "3"].map(parseInt)
 
 
 // ----------------------------------------------------------
@@ -112,4 +112,4 @@ var index = [
     {key: 4, sector: 145, t_score: 12, id: '293847hs8', value: 'Minbari'},
     {key: 8, sector: 214, t_score: 5, id: '283hy8347', value: 'Cylon'},
     {key: 3, sector: 8346, t_score: 10, id: 'n9837ks857', value: 'Jawa'},
-];
+]
