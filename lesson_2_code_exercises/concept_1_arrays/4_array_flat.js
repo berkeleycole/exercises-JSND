@@ -26,3 +26,6 @@ const characters = [
     ['Spider Man', ['Venom']],
     ['Professor X', 'Wolverine', 'Quicksilver', ['Magneto']]
 ]
+
+const results = characters.flat()
+console.log(resutls)
