@@ -55,11 +55,28 @@ console.log(end)
 
 
 // ----------------------------------------------------------
-// One more
+// Write a map function to print the Job: Name:
+const shipMates = [["Mal", "Captain"], ["Wash", "Pilot"], ["Zoey", "1st Mate"], ["Jayne", "Public Relations"]]
 
+// your code
+
+// expected output: Array ["Captain: Mal", etc...]
+
+// solution
+const result = shipMates.map(arr => arr.reverse().join(': '))
+console.log(result)
 
 // ----------------------------------------------------------
-// One more
+// Write a map function that prints the name: even|odd
+const awayTeam = ["Picard", "Riker", "Troy", "Data"]
+
+// your code
+
+// expected output: Array: ["Picard: even", "Riker: odd", etc...]
+
+// solution:
+const result = awayTeam.map((name, i) => `${name}: ${i % 2 === 0 ? 'even' : 'odd'}`)
+console.log(result)
 
 // ----------------------------------------------------------
 
