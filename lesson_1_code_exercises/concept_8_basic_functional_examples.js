@@ -29,7 +29,7 @@ function sayHello() {
 
 function countDown(startNum) {
     let countDownArray = []
-    for(let i = startNum; i > 0; i-- ){
+    for(let i = startNum; i >= 0; i-- ){
         countDownArray.push(i)
     }
     return countDownArray

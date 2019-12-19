@@ -36,3 +36,37 @@ const { role, actor } = movie.cast.main
 
 // But what if we wanted to the keep the new names of the variables?
 const { role: main_character, actor: main_actor  } = movie.cast.main
+
+// ----------------------------------------------------------
+
+// OBJECT DESTRUCTURING EXERCISES
+
+// ----------------------------------------------------------
+
+const state = {
+    name: 'Wash',
+    ship: {
+        name: 'Serenity',
+        class: 'Firefly'
+    },
+    role: 'Pilot',
+    favorite_thing: {
+        item: "Toy",
+        details: {
+            type: 'Toy Tyrannosaurus Rex'
+        }
+    ]
+}
+
+// Given the state object above, find the following:
+
+// Person's name and role
+const { name, role } = state
+
+// Ship's name
+const { name } = state.ship.name
+
+
+// favorite thing item and all details
+const { item } = state.favorite_thing.item
+const { type } = state.favorite_thing.details.type
