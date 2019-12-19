@@ -20,3 +20,5 @@ let greeting = "Hello, "
 greet('Arthur', greeting)
 
 // now we can re-use greeting, and the greet function is pure
+
+
