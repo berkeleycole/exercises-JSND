@@ -1237,3 +1237,17 @@ const api_sample_data = {
     ]
   }
 }
+
+// The object above is a real API response from the NASA Near Earth Object API. 
+// From the items above, find the following:
+
+// - How many near earth objects did NASA register for the date of the search? Return the asteroid count
+
+// Hazardous -----------------------------------------------
+// - A list of all objects (their id, name, max size in miles, and closest approach in miles) that are labeled potentially hazardous
+
+// Too Close for Comfort -----------------------------------
+// - A list of all objects (their id, name, max size in miles, and closest approach in miles) that have a miss_distance of less than 900,000 miles
+
+// Alert ---------------------------------------------------
+// Of all the near earth objects for this date, find the time that the asteroid with the nearest miss will be closest to eartch. 

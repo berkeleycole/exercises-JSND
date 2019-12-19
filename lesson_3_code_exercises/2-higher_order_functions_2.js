@@ -28,6 +28,31 @@ function greaterThan(n) {
 
 // ----------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 weapons_with_noises = [
     { weapon: 'Phaser', noise: 'Pew Pew' },
     { weapon: 'Blaster', noise: 'Pew Pew' },
@@ -43,10 +68,6 @@ function fire(weapon, sound) {
 // let silencer = 
 
 // -------------------------------------------------------
-
-
-
-
 
 
 const weapons_cache = ['Phasers', 'Blasters', 'Sonic Screwdrivers', 'Lightsabers', 'Noisy Crickets', 'Photon Torpedos']
