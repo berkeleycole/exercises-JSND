@@ -4,7 +4,7 @@
 
 // ----------------------------------------------------------
 
-const state = {
+let state = {
     name: 'Wash',
     ship: {
         name: 'Serenity',
@@ -28,22 +28,22 @@ const incoming_state = {
     history: ["Browncoat sergeant"]
 }
 
-const state = Object.assign(state, new_state);
+state = Object.assign(state, new_state);
 // target, source
 
 // Resulting object
-const state = { 
-    name: "Mal", 
-    ship: { 
-        name: "Serenity", 
-        class: "Firefly" 
-    }, 
-    role: "Captain", 
-    favorite_thing: { 
-        item: "Not complicated" 
-    }, 
-    history: ["Browncoat sergeant"] 
-} 
+// state = { 
+//     name: "Mal", 
+//     ship: { 
+//         name: "Serenity", 
+//         class: "Firefly" 
+//     }, 
+//     role: "Captain", 
+//     favorite_thing: { 
+//         item: "Not complicated" 
+//     }, 
+//     history: ["Browncoat sergeant"] 
+// } 
 
 
 // ----------------------------------------------------------
@@ -52,3 +52,4 @@ const state = {
 
 // ----------------------------------------------------------
 
+// Merge another character into this state. Keep at least one value and change at least one value
