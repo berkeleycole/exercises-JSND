@@ -18,3 +18,11 @@ Object.freeze(current_show);
 
 obj.current_season = 5;
 // Throws an error and current_season remains unchanged
+
+
+
+// OBJECT FREEZE EXERCISE
+
+// ----------------------------------------------------------
+
+// Create your own object and freeze it!

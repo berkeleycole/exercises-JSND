@@ -34,7 +34,7 @@ const doubler = function(x) {
     return x * 2
 }
 
-const doubles2 = nums.map(x => { return doubler(x) })
+const doubles2 = nums.map(doubler)
 console.log(doubles2)
 
 // ----------------------------------------------------------
