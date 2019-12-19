@@ -1,37 +1,51 @@
 // ----------------------------------------------------------
 
-// HIGHER ORDER FUNCTIONS
+// HIGHER ORDER FUNCTIONS EXAMPLE
 
 // ----------------------------------------------------------
 
-const weapons = ['Phaser', 'Blaster', 'Sonic Screwdriver', 'Lightsaber', 'Noisy Cricket']
-let arsenal = []
-// have to use let because this value will change
 
-function add_to_arsenal(weapon) {
-    arsenal = arsenal.concat(weapon)
-    // update arsenal
+// Doubling
+const nums = [1, 2, 3, 4, 5]
+const doubles = nums.map(x => x * 2)
+
+console.log(doubles)
+// expected output: Array [2, 4, 6, 8, 10]
+
+// Equivalent to:
+
+const doubler = function (x) {
+  return x * 2
 }
 
-weapons.map(add_to_arsenal)
+const doubles2 = nums.map(doubler)
 
-// ALTERNATE SYNTAX
-// weapons.map(w => add_to_arsenal(w))
+// inside map... 
+// doubler(1, 0, [1,2,3,4,5])
 
-console.log(arsenal)
+console.log(doubles2)
 
-function greaterThan(n) {
-  return m => m > n;
+// ----------------------------------------------------------
+
+// HIGHER ORDER FUNCTIONS EXERCISES
+
+// ----------------------------------------------------------
+
+// Create a function that when passed as a callback to the Higher Order function provided, makes the final return the number's square plus two
+
+const addTwo = (callback) => {
+  return callback() + 2
 }
-let greaterThan10 = greaterThan(10);
-console.log(greaterThan10(11));
-// → true
+
+// Create a Higher Order Function that could take this callback to return a greeting
+
+const createFullName = (first_name, last_name, title) => {
+  return `${title} ${first_name} ${last_name}`
+}
 
 
-weapons_with_noises = [
-    {weapon: 'Phaser', noise: 'Pew Pew'},
-    {weapon: 'Blaster', noise: 'Pew Pew'},
-    {weapon: 'Sonic Screwdriver', noise: 'Pew Pew'},
-    {weapon: 'Lightsaber', noise: 'Pew Pew'},
-    {weapon: 'Noisy Cricket', noise: 'Pew Pew'}
-]
+// you might notice that this function is less than ideal - that's great! We'll talk about why next
+
+
+
+

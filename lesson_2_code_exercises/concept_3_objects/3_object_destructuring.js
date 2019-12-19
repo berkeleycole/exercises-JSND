@@ -55,7 +55,7 @@ const state = {
         details: {
             type: 'Toy Tyrannosaurus Rex'
         }
-    ]
+    }
 }
 
 // Given the state object above, find the following:
