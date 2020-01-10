@@ -7,11 +7,6 @@
 // run this in a browser
 <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"></script>
 
-<script>
-	
-    
-</script>
-
 // Getting and Setting values
 
 // this is how we declare an immutable Object
