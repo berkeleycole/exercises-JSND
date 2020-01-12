@@ -1239,9 +1239,18 @@ const api_sample_data = {
 }
 
 // The object above is a real API response from the NASA Near Earth Object API. 
-// From the items above, find the following:
+// Use the ES6 methods we've learned so far on the response above to answer the following questions:
 
 // - How many near earth objects did NASA register for the date of the search? Return the asteroid count
+
+// expected output: 
+
+// solution:
+const result = api_sample_data.element_count
+// OR, the easy way
+const result = api_sample_data.element_count
+// Always remember to check the entire API result for what you are looking for!
+
 
 // Hazardous -----------------------------------------------
 // - A list of all objects (their id, name, max size in miles, and closest approach in miles) that are labeled potentially hazardous
