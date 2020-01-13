@@ -1,4 +1,4 @@
-let characters = [
+const characters = [
   {
     name: 'Marvin the Paranoid Android',
     role: 'First Mate',
@@ -67,7 +67,7 @@ let characters = [
     role: 'Captain',
     universe: 'Firefly',
     weapon: 'pistol',
-    power_level 160
+    power_level: 160
   },
   {
     name: 'Spock',
@@ -103,6 +103,7 @@ let characters = [
 // expected output:
 
 // solution:
+const captainNames = characters.filter(c => c.role == 'Captain').join(', ')
 
 
 // ----------------------------------------------------------
@@ -123,11 +124,21 @@ let characters = [
 
 // ----------------------------------------------------------
 
-// Create an array containing any characters who are the only character listed in their universe.
+// Create an array containing characters' names who are the only character listed in their universe.
 
 // expected output:
 
 // solution:
+const groupByUniverse = (acc, curr) => {
+    acc[curr.universe] = acc[curr.universe] === undefined ? [] : acc[curr.universe]
+    acc[curr.universe].push(curr)
+}
+
+const soloCharacters = characters
+    .reduce(groupByUniverse, {})
+    .filter(universe => universe.length === 1)
+    .map(universe => universe[0])
+    .join(', ')
 
 
 // ----------------------------------------------------------
