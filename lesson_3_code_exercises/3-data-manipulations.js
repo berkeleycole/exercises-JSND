@@ -1240,6 +1240,7 @@ const api_sample_data = {
 
 // The object above is a real API response from the NASA Near Earth Object API. 
 // Use the ES6 methods we've learned so far on the response above to answer the following questions:
+<<<<<<< HEAD
 
 // - How many near earth objects did NASA register for the date of the search? Return the asteroid count 
 // (** Important note here - we truncated this response, so the element.count value will not be correct.)
@@ -1264,6 +1265,17 @@ const api_sample_data = {
 // }, 0);
 
 // console.log(result)
+=======
+>>>>>>> 0eba77f6ec58326b3eae02a5801ef0f044f5dcfb
+
+
+// expected output: 
+
+// solution:
+const result = api_sample_data.element_count
+// OR, the easy way
+const result = api_sample_data.element_count
+// Always remember to check the entire API result for what you are looking for!
 
 
 // Hazardous -----------------------------------------------
@@ -1318,6 +1330,7 @@ const api_sample_data = {
 
 // Alert ---------------------------------------------------
 // Of all the near earth objects for this date, find the time that the asteroid with the nearest miss will be closest to eartch. 
+<<<<<<< HEAD
 
 const red_alert = api_sample_data.near_earth_objects['2019-12-02'].reduce((smallest_distance, asteroid) => {
   if (asteroid.close_approach_data[0].miss_distance.miles < smallest_distance.close_approach_data[0].miss_distance.miles) {
@@ -1330,3 +1343,5 @@ const red_alert = api_sample_data.near_earth_objects['2019-12-02'].reduce((small
 
 console.log(red_alert)
 console.log(red_alert.close_approach_data[0].miss_distance.miles)
+=======
+>>>>>>> 0eba77f6ec58326b3eae02a5801ef0f044f5dcfb
