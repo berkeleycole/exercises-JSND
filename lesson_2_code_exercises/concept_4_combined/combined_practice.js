@@ -132,6 +132,8 @@ const captainNames = characters.filter(c => c.role == 'Captain').join(', ')
 const groupByUniverse = (acc, curr) => {
     acc[curr.universe] = acc[curr.universe] === undefined ? [] : acc[curr.universe]
     acc[curr.universe].push(curr)
+
+    return acc
 }
 
 const soloCharacters = characters
