@@ -98,7 +98,7 @@ const characters = [
 
 // ----------------------------------------------------------
 
-// Create an array containing only the names of Captains from all universes. 
+// Create an array containing only the names of Captains from all universes.
 
 // expected output:
 
@@ -112,7 +112,7 @@ const captainNames = characters.filter(c => c.role == 'Captain').join(', ')
 
 // ----------------------------------------------------------
 
-// Create 
+// Create
 
 // expected output:
 
@@ -129,19 +129,25 @@ const captainNames = characters.filter(c => c.role == 'Captain').join(', ')
 // expected output:
 
 // solution:
-const groupByUniverse = (acc, curr) => {
+const groupByUniverse = (acc, curr, i, arr) => {
     acc[curr.universe] = acc[curr.universe] === undefined ? [] : acc[curr.universe]
     acc[curr.universe].push(curr)
+
+    if (i + 1 == arr.length) {
+        return Object.entries(acc)
+            .filter(([_, characters]) => characters.length === 1)
+            .map(([_, characters]) => characters[0])
+    }
 
     return acc
 }
 
 const soloCharacters = characters
     .reduce(groupByUniverse, {})
-    .filter(universe => universe.length === 1)
-    .map(universe => universe[0])
+    .map(character => character.name)
     .join(', ')
 
+console.log('soloCharacters:', soloCharacters)
 
 // ----------------------------------------------------------
 
