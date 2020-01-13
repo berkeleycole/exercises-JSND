@@ -22,6 +22,7 @@ const words = ['tardis', 'grok', 'frak', 'blaster', 'klingon', 'shepherd']
 // expected output: Array ['shepherd']
 
 // solution: 
+const longWords = words.filter(w => w.length > 7)
 
 // ----------------------------------------------------------
 
@@ -31,6 +32,7 @@ const words = [12, 13, 14, 15, 16, 17]
 // expected output: Array [12, 14, 16]
 
 // solution: 
+const even = numbers.filter(n => n % 2 == 0)
 
 // ----------------------------------------------------------
 
@@ -81,3 +83,4 @@ const hunters = [
 
 
 // solution:
+const active = hunters.filter(h => h.status == 'active')
