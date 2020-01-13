@@ -1,4 +1,4 @@
-// One important thing to note is that nested objects have to be declared as Immutable maps just like top level ones
+// WATCH OUT! One important thing to note is that nested objects have to be declared as Immutable maps just like top level ones
 // Otherwise, they will be stored as normal JS objects, which Immutable handles differently
 
 // So this:
@@ -25,7 +25,7 @@ const current_show = Immutable.Map({
 
 // Lets think about how we could refactor our application state flow to use Immutable. 
 // The original code is provided below, how might you re-write both the store object and updateStore function with Immutable?
-// Rememberm if you need help, the docs should be the first place you look
+// Remember if you need help, the docs should be the first place you look
 
 let store = {
     user: {
