@@ -1240,10 +1240,8 @@ const api_sample_data = {
 
 // The object above is a real API response from the NASA Near Earth Object API. 
 // Use the ES6 methods we've learned so far on the response above to answer the following questions:
-<<<<<<< HEAD
 
-// - How many near earth objects did NASA register for the date of the search? Return the asteroid count 
-// (** Important note here - we truncated this response, so the element.count value will not be correct.)
+// - How many near earth objects did NASA register for the date 2019-12-02? Return the average absolute_magnitude_h.
 // Hint - you can acheive this multiple ways, but the reduce method with a slightly less common attribute, the initial_value setting, will be a big help
 // take a look at this page: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
@@ -1259,23 +1257,19 @@ const api_sample_data = {
 // expected output: 11
 
 // solution:
-// const result = api_sample_data.near_earth_objects['2019-12-02'].reduce((runningTotal, currentValue, index, whole) => {
-//   console.log(currentValue)
-//   return runningTotal + 1
-// }, 0);
+// const asteroids = api_sample_data.near_earth_objects['2019-12-02']
+// const average_absolute_magnitude_h = asteroids.reduce((acc, curr, i, arr) => {
+//   if (i + 1 == arr.length) {
+//     return acc / arr.length
+//   }
 
-// console.log(result)
-=======
->>>>>>> 0eba77f6ec58326b3eae02a5801ef0f044f5dcfb
+//   return acc += curr
+// })
 
+// console.log(average_absolute_magnitude_h)
 
 // expected output: 
 
-// solution:
-const result = api_sample_data.element_count
-// OR, the easy way
-const result = api_sample_data.element_count
-// Always remember to check the entire API result for what you are looking for!
 
 
 // Hazardous -----------------------------------------------
@@ -1283,8 +1277,7 @@ const result = api_sample_data.element_count
 
 // solution:
 // const hazardous = api_sample_data.near_earth_objects['2019-12-02'].filter(asteroid => asteroid.is_potentially_hazardous_asteroid === true)
-
-// const result = hazardous.map(asteroid => {
+// const hazardousFmt = hazardous.map(asteroid => {
 //   console.log(asteroid)
 
 //   return {
@@ -1295,7 +1288,7 @@ const result = api_sample_data.element_count
 //   }
 // })
 
-// console.log(result)
+// console.log(hazardousFmt)
 
 // OR - you could use destructuring:
 
@@ -1313,9 +1306,8 @@ const result = api_sample_data.element_count
 
 
 // solution:
-// const too_close = api_sample_data.near_earth_objects['2019-12-02'].filter(asteroid => asteroid.close_approach_data[0].miss_distance.miles < 900000)
-
-// const result = too_close.map(asteroid => {
+// const tooClose = api_sample_data.near_earth_objects['2019-12-02'].filter(asteroid => asteroid.close_approach_data[0].miss_distance.miles < 900000)
+// const tooCloseResults = tooClose.map(asteroid => {
 //   console.log(asteroid)
 
 //   const { id, name, estimated_diameter: { miles: { estimated_diameter_max } }, close_approach_data } = asteroid
@@ -1328,20 +1320,22 @@ const result = api_sample_data.element_count
 //   }
 // })
 
-// Alert ---------------------------------------------------
-// Of all the near earth objects for this date, find the time that the asteroid with the nearest miss will be closest to eartch. 
-<<<<<<< HEAD
+// console.log(tooCloseResults)
 
-const red_alert = api_sample_data.near_earth_objects['2019-12-02'].reduce((smallest_distance, asteroid) => {
-  if (asteroid.close_approach_data[0].miss_distance.miles < smallest_distance.close_approach_data[0].miss_distance.miles) {
-    console.log(asteroid.close_approach_data[0].miss_distance.miles)
-    return asteroid
+// Alert ---------------------------------------------------
+// Of all the near earth objects for 2019-12-02, find the time that the asteroid with the nearest miss will be closest to earth.
+
+const closest = api_sample_data.near_earth_objects['2019-12-02'].reduce((closest, curr) => {
+  const currDist = parseFloat(curr.close_approach_data[0].miss_distance.miles)
+  const closestDist = parseFloat(closest.close_approach_data[0].miss_distance.miles)
+
+  if (currDist > closestDist) {
+    return closest
   } else {
-    return smallest_distance
+    return curr
   }
 })
 
-console.log(red_alert)
-console.log(red_alert.close_approach_data[0].miss_distance.miles)
-=======
->>>>>>> 0eba77f6ec58326b3eae02a5801ef0f044f5dcfb
+console.log(closest.close_approach_data[0].miss_distance.miles)
+
+// output: 775950.9423668918
