@@ -29,7 +29,7 @@ function greaterThan(n) {
 // ----------------------------------------------------------
 
 
-
+const stasis = (zone, depth) => (zone * 327)/(depth * .24)
 
 
 
@@ -61,7 +61,7 @@ weapons_with_noises = [
     { weapon: 'Noisy Cricket', noise: 'chirp' }
 ]
 
-function fire(weapon, sound) {
+function fire(weapon) {
     return
 }
 

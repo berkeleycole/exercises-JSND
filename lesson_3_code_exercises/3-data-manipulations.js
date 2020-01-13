@@ -1239,15 +1239,94 @@ const api_sample_data = {
 }
 
 // The object above is a real API response from the NASA Near Earth Object API. 
-// From the items above, find the following:
+// Use the ES6 methods we've learned so far on the response above to answer the following questions:
 
-// - How many near earth objects did NASA register for the date of the search? Return the asteroid count
+// - How many near earth objects did NASA register for the date of the search? Return the asteroid count 
+// (** Important note here - we truncated this response, so the element.count value will not be correct.)
+// Hint - you can acheive this multiple ways, but the reduce method with a slightly less common attribute, the initial_value setting, will be a big help
+// take a look at this page: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+// Here is a snippet of the pertinent part:
+// initialValue - Optional Argument
+// A value to use as the first argument to the first call of the callback. If no initialValue is supplied, the first element in the array will be used and skipped. 
+
+// If you were to provide an initialValue as the second argument to reduce(), the result would look like this:
+// [0, 1, 2, 3, 4].reduce((accumulator, currentValue, currentIndex, array) => {
+//   return accumulator + currentValue
+// }, 10)
+
+// expected output: 11
+
+// solution:
+// const result = api_sample_data.near_earth_objects['2019-12-02'].reduce((runningTotal, currentValue, index, whole) => {
+//   console.log(currentValue)
+//   return runningTotal + 1
+// }, 0);
+
+// console.log(result)
+
 
 // Hazardous -----------------------------------------------
-// - A list of all objects (their id, name, max size in miles, and closest approach in miles) that are labeled potentially hazardous
+// - A list of all objects (their id, name, max size in miles, and how many miles it will miss the earth by) that are labeled potentially hazardous
+
+// solution:
+// const hazardous = api_sample_data.near_earth_objects['2019-12-02'].filter(asteroid => asteroid.is_potentially_hazardous_asteroid === true)
+
+// const result = hazardous.map(asteroid => {
+//   console.log(asteroid)
+
+//   return {
+//     id: asteroid.id,
+//     name: asteroid.name, 
+//     max_size: asteroid.estimated_diameter.miles.estimated_diameter_max,
+//     closest_approach: asteroid.close_approach_data[0].miss_distance.miles
+//   }
+// })
+
+// console.log(result)
+
+// OR - you could use destructuring:
+
+// const { id, name, estimated_diameter: { miles: { estimated_diameter_max } }, close_approach_data } = asteroid
+
+// return {
+//   id: id,
+//   name: name,
+//   max_size: estimated_diameter_max,
+//   closest_approach: close_approach_data[0].miss_distance.miles
+// }
 
 // Too Close for Comfort -----------------------------------
 // - A list of all objects (their id, name, max size in miles, and closest approach in miles) that have a miss_distance of less than 900,000 miles
 
+
+// solution:
+// const too_close = api_sample_data.near_earth_objects['2019-12-02'].filter(asteroid => asteroid.close_approach_data[0].miss_distance.miles < 900000)
+
+// const result = too_close.map(asteroid => {
+//   console.log(asteroid)
+
+//   const { id, name, estimated_diameter: { miles: { estimated_diameter_max } }, close_approach_data } = asteroid
+
+//   return {
+//     id: id,
+//     name: name,
+//     max_size: estimated_diameter_max,
+//     closest_approach: close_approach_data[0].miss_distance.miles
+//   }
+// })
+
 // Alert ---------------------------------------------------
 // Of all the near earth objects for this date, find the time that the asteroid with the nearest miss will be closest to eartch. 
+
+const red_alert = api_sample_data.near_earth_objects['2019-12-02'].reduce((smallest_distance, asteroid) => {
+  if (asteroid.close_approach_data[0].miss_distance.miles < smallest_distance.close_approach_data[0].miss_distance.miles) {
+    console.log(asteroid.close_approach_data[0].miss_distance.miles)
+    return asteroid
+  } else {
+    return smallest_distance
+  }
+})
+
+console.log(red_alert)
+console.log(red_alert.close_approach_data[0].miss_distance.miles)
