@@ -112,11 +112,11 @@ const captainNames = characters.filter(c => c.role == 'Captain').join(', ')
 
 // ----------------------------------------------------------
 
-// Create
+// Group all characters by role in a multidimensional array
 
 // expected output:
 
-// solution:
+// solution: 
 
 // ----------------------------------------------------------
 
@@ -155,8 +155,4 @@ console.log('soloCharacters:', soloCharacters)
 
 // ----------------------------------------------------------
 
-//
-
-// expected output:
-
-// solution:
+// What is the average power level across all characters?
