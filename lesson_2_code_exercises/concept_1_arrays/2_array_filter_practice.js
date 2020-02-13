@@ -28,7 +28,7 @@ const longWords = words.filter(w => w.length > 7)
 
 // Find all even values
 
-const words = [12, 13, 14, 15, 16, 17]
+const numbers = [12, 13, 14, 15, 16, 17]
 // expected output: Array [12, 14, 16]
 
 // solution: 
