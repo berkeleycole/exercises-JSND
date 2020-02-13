@@ -9,10 +9,10 @@ const captains = ['Picard', 'Adama', 'Reynolds', 'Beeblebrox']
 // create new array
 const titles = captains.map(cap => `Captain ${cap}`)
 
-// equivalent to
-const titles = captains.map(cap => {
-    return `Captain ${cap}`
-})
+// equivalent to:
+//const titles = captains.map(cap => {
+    //return `Captain ${cap}`
+//})
 
 console.log(titles)
 // expected output: Array ['Captain Picard', 'Captain Adama', 'Captain Reynolds', 'Captain Beeblebrox']
@@ -29,7 +29,6 @@ console.log(doubles)
 // expected output: Array [2, 4, 6, 8, 10]
 
 // Equivalent to:
-
 const doubler = function(x) {
     return x * 2
 }
@@ -97,14 +96,14 @@ const nums2 = nums.map(int, index, array => {
 // ----------------------------------------------------------
 // Create a multidimensional array of each item and its index in the original Array
 
-const sci_fi_shows = ['Manedlorian', 'Enterprise', 'Firefly', 'Battlestar Galactica']
+const sci_fi_shows = ['Mandalorian', 'Enterprise', 'Firefly', 'Battlestar Galactica']
 
 // expected output: Array [['Manedlorian', 0], ['Enterprise', 1], ['Firefly', 2], ['Battlestar Galactica', 3]]
 
 // ----------------------------------------------------------
 // for each item in this array, create a multidimensional array containing the entire original array
 
-const sci_fi_shows = [1, 2, 3, 4]
+const numbers = [1, 2, 3, 4]
 
 // expected output: Array [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
 
