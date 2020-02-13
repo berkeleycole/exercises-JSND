@@ -28,4 +28,4 @@ const characters = [
 ]
 
 const results = characters.flat()
-console.log(resutls)
+console.log(results)
