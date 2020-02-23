@@ -100,7 +100,7 @@ const characters = [
 
 // Create an array containing only the names of Captains from all universes.
 
-// expected output: 
+// expected output: ['Mal Reynolds', 'Kathryn Janeway']
 
 // solution:
 // const captainNames = characters.filter(c => c.role == 'Captain').join(', ')
