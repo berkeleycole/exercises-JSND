@@ -31,10 +31,10 @@ console.log(doubles2)
 
 // ----------------------------------------------------------
 
-// Create a function that when passed as a callback to the Higher Order function provided, makes the final return the number's square plus two
+// Create a function that when passed as a callback to the Higher Order function provided, makes the final return the target number's square plus two
 
-const addTwo = (callback) => {
-  return callback() + 2
+const addTwo = (target, callback) => {
+  return callback(target) + 2
 }
 
 // Create a Higher Order Function that could take this callback to return a greeting
