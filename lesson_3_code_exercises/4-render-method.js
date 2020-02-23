@@ -1,4 +1,5 @@
 // Here is the code from the example text
+// The workspace will not be able to show you the resulting HTML page, if you want to see it plug the code in here: https://jsfiddle.net/
 
 const root = document.getElementById('root')
 
